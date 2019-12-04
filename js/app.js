@@ -25,7 +25,9 @@ UI.searchForm.addEventListener('submit', (e) =>{
             api.fetchApi() // always when async await comes then() promises
                 .then(data => {
                     if(data.response.lyrics){
-                        console.log('si existe');
+                       // The song runs
+                        const lyric = data.response.lyrics;
+                        UI.result.textContent = lyric;
                     }else{
                         // La cancion no es encontrada o no existe
                         UI.divMessage.innerHTML = 'Error... The song is not found, try another search';
